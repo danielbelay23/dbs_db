@@ -1,0 +1,15 @@
+*.pkl
+*.bak
+*.png
+_local*
+tmp.*
+*.ipynb
+*.html
+.python-version
+*.json
+*.egg_info
+__pycache__/
+.streamlit/
+.venv/
+.pytest_cache/
+.env.local
