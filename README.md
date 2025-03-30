@@ -1,66 +1,126 @@
-# Build A Digital Resume Using Python & Streamlit
-Create a digital resume in minutes with Python and Streamlit. In this tutorial, I'll show you what it takes to build a digital resume using Python and Streamlit.<br>
+# Digital CV - Interactive Resume Application
 
-Feel free to use this template and adjust it to your needs & linking.<br>
+A modern, interactive digital resume built with Streamlit, featuring a clean design, responsive layout, and professional presentation of skills, experience, and projects.
 
-💡 **The website design is inspired by [@divanov11](https://github.com/divanov11)** 💡 <br>
-Find his:
-- repository here: https://github.com/divanov11/Digital-Resume
-- YouTube video here: https://youtu.be/clwpf3VwCZQ
+## 🌟 Features
 
-## Live Demo
-👉 **https://resume.pythonandvba.com/**
+- **Modern UI/UX**: Clean, responsive design with gradient background and card-based layout
+- **Interactive Sections**:
+  - About Me with personal interests and background
+  - Skills categorization (Hard Skills & Soft Skills)
+  - Detailed Work History with elegant card presentations
+  - Projects & Accomplishments showcase
+- **Downloadable Resume**: Option to download the full PDF resume
+- **Responsive Design**: Adapts to different screen sizes
+- **Custom Styling**: Professional color scheme with Montserrat and monospace fonts
 
-## Screenshots
-![Demo1](./assets/demo1.png?raw=true "Demo1")
-![Demo2](./assets/demo2.png?raw=true "Demo2")
-![Demo3](./assets/demo3.png?raw=true "Demo3")
+## 🛠️ Technology Stack
 
-## Video Tutorial
-[![YouTube Video](https://img.youtube.com/vi/BXAeMICmUSQ/0.jpg)](https://youtu.be/BXAeMICmUSQ)
+- **Frontend**: Streamlit
+- **Styling**: Custom CSS, HTML
+- **Data Visualization**: Plotly
+- **Container Support**: Docker
+- **Version Control**: Git with pre-commit hooks
+- **Additional Libraries**: 
+  - Pillow for image processing
+  - pandas for data handling
+  - streamlit-chat for interactive features
 
+## 🚀 Getting Started
 
-## Requirements
-Install the dependencies with pip
+### Prerequisites
+
+- Python 3.11+
+- pip package manager
+- Virtual environment (recommended)
+
+### Local Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/danielbelay23/digital_cv.git
+cd digital_cv
 ```
-Pillow==9.2.0
-streamlit==1.12.0
+
+2. Create and activate a virtual environment:
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
-## Run the app
-Terminal
-```
-# vanilla terminal
-streamlit run app.py
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
 ```
 
+4. Run the application:
+```bash
+streamlit run about_daniel_belay.py
+```
 
+### 🐳 Docker Setup
 
-## 🤓 Check Out My Excel Add-ins
-I've developed some handy Excel add-ins that you might find useful:
+1. Build the Docker image:
+```bash
+make docker_build
+```
 
-- 📊 **[Dashboard Add-in](https://pythonandvba.com/grafly)**: Easily create interactive and visually appealing dashboards.
-- 🎨 **[Cartoon Charts Add-In](https://pythonandvba.com/cuteplots)**: Create engaging and fun cartoon-style charts.
-- 🤪 **[Emoji Add-in](https://pythonandvba.com/emojify)**: Add a touch of fun to your spreadsheets with emojis.
-- 🛠️ **[MyToolBelt Add-in](https://pythonandvba.com/mytoolbelt)**: A versatile toolbelt for Excel, featuring:
-  - Creation of Pandas DataFrames and Jupyter Notebooks from Excel ranges
-  - ChatGPT integration for advanced data analysis
-  - And much more!
+2. Run the container:
+```bash
+make docker_run
+```
 
+Or use docker-compose:
+```bash
+docker-compose up
+```
 
+## 📁 Project Structure
 
-## 🤝 Connect with Me
-- 📺 **YouTube:** [CodingIsFun](https://youtube.com/c/CodingIsFun)
-- 🌐 **Website:** [PythonAndVBA](https://pythonandvba.com)
-- 💬 **Discord:** [Join our Community](https://pythonandvba.com/discord)
-- 💼 **LinkedIn:** [Connect with me](https://www.linkedin.com/in/sven-bosau/)
-- 📸 **Instagram:** [Follow me](https://www.instagram.com/codingisfun_official/)
+```
+digital_cv/
+├── assets/                 # Static assets (images, CSS)
+├── src/                    # Source code
+│   ├── text_utils.py      # Text processing utilities
+│   └── data_utils.py      # Data handling utilities
+├── pages/                  # Additional Streamlit pages
+├── about_daniel_belay.py  # Main application file
+├── requirements.txt       # Python dependencies
+├── setup.sh              # Streamlit configuration
+├── Makefile             # Build and run commands
+└── docker-compose.yml   # Docker composition
+```
 
-## Support My Work
-Love my content and want to show appreciation? Why not [buy me a coffee](https://pythonandvba.com/coffee-donation) to fuel my creative engine? Your support means the world to me! 😊
+## 🔧 Development
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://pythonandvba.com/coffee-donation)
+### Available Make Commands
 
-## Feedback
-Got some thoughts or suggestions? Don't hesitate to reach out to me at contact@pythonandvba.com. I'd love to hear from you! 💡
-![Logo](https://www.pythonandvba.com/banner-img)
+- `make setup`: Install dependencies
+- `make run`: Run app locally
+- `make docker_build`: Build Docker image
+- `make docker_run`: Run app in Docker container
+- `make clean`: Clean up generated files
+
+### Pre-commit Hooks
+
+The project uses pre-commit hooks for code quality:
+- YAML checking
+- End of file fixing
+- Trailing whitespace removal
+- Black code formatting
+
+## 📄 License
+
+© 2025 Daniel Belay. All rights reserved.
+
+## 🤝 Contributing
+
+While this is a personal project, suggestions and feedback are welcome. Feel free to:
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
+
+## 📞 Contact
+
+- Email: danielkbelay2@gmail.com
+- GitHub: [github.com/danielbelay23](https://github.com/danielbelay23)

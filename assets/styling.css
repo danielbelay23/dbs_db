@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&family=Source+Code+Pro:wght@500&family=Montserrat:wght@400;700&family=Fira+Code:wght@400;600&display=swap');
+
+* {
+    font-family: 'Fira Code', monospace;
+    color: #e0e0e0;
+}
+
+.stApp {
+    background: linear-gradient(135deg, #1a1a2e, #D2C0DA) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+}
+
+#MainMenu {
+    visibility: visible !important;
+}
+
+.stDeployButton {
+    visibility: visible !important;
+}
+
+.main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    color: #ffcc00;
+}
+
+.description {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.1em;
+    color: #ffffff;
+    margin-bottom: 0.5em;
+}
+
+.location, .email {
+    font-size: 1em;
+    color: #9fe2bf;
+    font-weight: 500;
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: #ff9999;
+    margin-top: 1.5em;
+}
+
+.custom-list li {
+    padding-bottom: 0.3em;
+}
+
+.project-link {
+    font-size: 1em;
+    color: #87cefa !important;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 5%;
+    border-color: #ffcc00;
+}
+
+footer {visibility: hidden;}
+header {visibility: hidden;}
