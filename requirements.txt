@@ -41,3 +41,11 @@ scipy==1.12.0
 pandas-gbq>=0.19.2
 setuptools==78.1.0
 colorlog==6.7.0
+##packages to connect to Kaggle datasets
+kaggle-api==1.7.4.2
+# hatch==1.14.0
+# hatch-vcs==0.3.0
+# hatchling==1.14.0
+# hatch-jupyter-packaging==0.16.0
+# hatch-node-resolve==1.14.0
+# hatch-vcs-ignore==0.3.0
