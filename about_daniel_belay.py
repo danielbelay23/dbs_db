@@ -37,7 +37,7 @@ profile_info = {
     "GITHUB": "github.com/danielbelay23",
 }
 projects = [
-    "🏆 Bring Stripe transactions tables into BigQuery",
+    "🏆 Brought Stripe transactions, charges, disputes and refunds tables into BigQuery",
     "🏆 Created a revenue specific data pipeline and dashboard",
     "🏆 Built an accounting and finance portal, using Streamlit",
     "🏆 Created a Sales compensation workflow that records monthly commissions and has the flexibility to include spiffs",
