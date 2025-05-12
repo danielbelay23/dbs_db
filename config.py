@@ -12,6 +12,6 @@ DASHBOARD_PAGES = {
     "000_one_off_projects.py": [
         "m4a_to_mp3_encoding_mismatch.py",
     ],
-}  
+}
 
 print(f"Loaded configuration with APP_ENV={APP_ENV} and AUTO_RELOAD={AUTO_RELOAD}")
