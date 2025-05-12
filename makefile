@@ -27,4 +27,4 @@ clean:
 	rm -rf .streamlit
 	rm -rf .DS_Store
 	rm -rf .venv
-	rm -rf .pytest_cache
+	rm -rf .pytest_cache 
