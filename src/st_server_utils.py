@@ -5,7 +5,6 @@ from streamlit.web.server.websocket_headers import (
 )
 import streamlit as st
 
-
 def get_headers():
     headers = st.context.headers
     return headers

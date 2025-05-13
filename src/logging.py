@@ -7,14 +7,13 @@ import sys
 from config import LOG_LEVEL, MS_NAME
 from colorlog import get_logger
 
-basicConfig = logging.basicConfig
-DEBUG = logging.DEBUG
-INFO = logging.INFO
-WARN = logging.WARN
-WARNING = logging.WARNING
-ERROR = logging.ERROR
-CRITICAL = logging.CRITICAL
-
+# basicConfig = logging.basicConfig
+# DEBUG = logging.DEBUG
+# INFO = logging.INFO
+# WARN = logging.WARN
+# WARNING = logging.WARNING
+# ERROR = logging.ERROR
+# CRITICAL = logging.CRITICAL
 
 try:
     import colorlog

@@ -59,7 +59,7 @@ def calc_z_val_p_val(mean_0, mean_1, var_0, var_1, n_0, n_1, n_tests=1):
     return pd.Series(d)
 
 def proc_df_statsig(
-    df, group="controlled_group", variable="safe_harbor_design", dummy="dc_plan_id"
+    df, group="", variable="", dummy=""
 ):
     try:
         g = df.groupby(group)
@@ -107,25 +107,4 @@ def proc_df_statsig(
             return calc_z_val_p_val(
                 mean_0, mean_1, var_0, var_1, n_0, n_1, n_tests=n_tests
             )
-
         return 0, g.groupby(variable).apply(proc_indv_group_pval)
-
-
-def proc_all_df_statsig_plan_level(df, thresh=0.8):
-    variables = df.columns
-
-    out = {}
-    out["statsig"] = {}
-    out["not statsig"] = {}
-
-    for variable in variables:
-        err_code, result = proc_df_statsig(df, variable=variable)
-        if err_code == 0:
-            statsig_rate = (result.statsig == True).mean()
-            if statsig_rate > thresh:
-                out["statsig"][variable] = statsig_rate
-            else:
-                out["not statsig"][variable] = statsig_rate
-        else:
-            print(result)
-    return out

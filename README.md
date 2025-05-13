@@ -1,6 +1,4 @@
-# Digital CV - Interactive Resume Application
-
-A modern, interactive digital resume built with Streamlit, featuring a clean design, responsive layout, and professional presentation of skills, experience, and projects.
+# Interactive Personal App
 
 ## 🌟 Features
 
@@ -32,20 +30,20 @@ A modern, interactive digital resume built with Streamlit, featuring a clean des
 
 - Python 3.11+
 - pip package manager
-- Virtual environment (recommended)
+- Virtual environment
 
 ### Local Setup
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/danielbelay23/digital_cv.git
+git clone https://github.com/danielbelay23/dbs_db.git
 cd digital_cv
 ```
 
 2. Create and activate a virtual environment:
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+source .venv/bin/activate  
 ```
 
 3. Install dependencies:

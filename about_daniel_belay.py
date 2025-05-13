@@ -3,6 +3,7 @@ import streamlit as st
 import re
 from src import asset_dir 
 from PIL import Image
+
 from src.text_utils import process_skills, create_job_card, job_card_style, create_section_heading, section_heading_style, create_info_card
 #from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader, LLMPredictor, ServiceContext
 #import openai
@@ -10,7 +11,7 @@ from src.text_utils import process_skills, create_job_card, job_card_style, crea
 
 ##################  PATH SETTINGS  ##################
 profile_pic = os.path.join(asset_dir, "profile-pic.png")
-resume_file = os.path.join(asset_dir, "daniel_belay_resume_2025.pdf")
+resume_file = os.path.join(asset_dir, "daniel_belay_resume.pdf")
 css_file = os.path.join(asset_dir, "styling.css")
 
 ##################  GENERAL SETTINGS  ##################
@@ -62,7 +63,7 @@ with right_container:
     st.markdown(
         f"<h1 style='font-family: Montserrat, sans-serif; letter-spacing: 0.05em; font-size: 3.75rem; margin-bottom: 0.5rem;'>{profile_info['NAME']}</h1>",
         unsafe_allow_html=True
-    )
+    ) 
     col2, col3 = st.columns([2, 2])    
     with col2:
         st.markdown(
@@ -82,8 +83,8 @@ with right_container:
         st.download_button(
             label=" 📄 Download Resume",
             data=PDFbyte,
-            file_name="daniel_belay_resume_2025",
-            mime="application/octet-stream",
+            file_name="daniel_belay_resume.pdf",
+            mime="application/pdf",
             key="download_resume",
             type="secondary",
         )
@@ -108,8 +109,8 @@ hard_skills_list = [
     "**👩‍💻 Programming:** Python (scikit-learn, pandas, Airflow, Streamlit, Jenkins), dbt, SQL, JavaScript", 
     "**📊 Data Viz:** Looker (Admin), Tableau, Plotly",
     "**🛠️ Tools:** Salesforce Admin, Pendo, Segment, Git, dbt, Jenkins",
-    "**📚 Modeling:** Logistic Regression, Decision Trees",
-    "**🗄️ Databases:** Postgres, MySQL, BigQuery, AWS Redshift"
+    "**📚 Modeling:** Logistic Regression, Hypothesis Testing, Correlation Analysis, Decision Trees",
+    "**🗄️ Databases:** Postgres, MySQL, BigQuery, AWS Redshift, Snowflake"
 ]
 soft_skills_list = [
     "📝 Strong stakeholder communication via project docs, status updates, weekly syncs, and ad-hoc conversations",
@@ -137,11 +138,11 @@ career_dict = {
         "location": "Austin, TX",
         "date": "January 2021 – Present",
         "descriptions": [
-            "Oversee the administration and optimization of Looker and BigQuery platforms including: database documentation, data validation protocols, Git integrations and repositories, and leading onboarding sessions on our data structure.",
-            "Spearhead the migration of our MySQL pipeline into team-specific data marts utilizing dbt and Jenkins, with a primary focus on fortifying data security measures and enhancing the data consumption experience for end users.",
-            "Developed revenue specific data pipelines and tables (using dbt and Jenkins)–ultimately leading to a Core Metrics dashboard reporting on ARR, AUM, lead count, churn, etc., distributed to the C-Suite and Board of Directors daily.",
-            "Supported the rollout of our new personal and SEP IRA products by implementing an error detection system, documenting the data structure, and creating a lead routing system to uphold SLA expectations.",
-            "Developed a self-hosted accounting portal using Streamlit, integrated with Google SSO, featuring downloadable invoice data (charges, discounts, Stripe fees, refunds, disputes), AR aging reports, and point-in-time accounting snapshot capabilities."
+            "Developed a self-hosted accounting portal using Streamlit, integrated with Google SSO, featuring monthly subledger summaries, downloadable line items, AR aging reports, and point-in-time accounting snapshot capabilities.",
+            "Architected revenue-specific data pipelines and tables (using dbt and Jenkins)–ultimately leading to a Core Metrics dashboard reporting on ARR, AUM, lead count, churn, etc., distributed to the C-Suite and Board of Directors daily.",
+            "Led the migration of our MySQL pipeline into team-specific data marts utilizing DBT, Docker, and Jenkins, focusing on reducing Google Cloud (GCP) cost, SOC 2 compliance, and enhancing the data experience for business analysts.",
+            "Enabled the rollout of personal and SEP IRA products by creating error detection systems using BigQuery, Sentry, and Honeycomb, checking for: invoice accuracy, failed ACH remediation, and Required Minimum Distributions.",
+            "Managed the administration and optimization of Looker and BigQuery platforms."
         ]
     },
     "job2": {
@@ -150,9 +151,9 @@ career_dict = {
         "location": "Redwood City, CA",
         "date": "January 2019 – August 2020",
         "descriptions": [
-            "Led an initiative to drive retention by analyzing LTV, onboarding health, conversion rates, NPS and churn, culminating in a Retention Health Index designed to inform cross-sell opportunities, pricing optimizations and churn potential.",
-            "Led end-to-end data support for Bluevine's new banking product, collaborating with engineering, product, sales, and support to maintain data pipelines and deliver insights on email conversions, support cases, cross-selling opportunities, and A/B tests.",
-            "Offboarded a third-party lead routing tool and developed an internal lead routing script optimizing lead distribution based on channel, in-office status, seniority, MQL status, and AE/SDR availability."
+            "Offboarded a third-party lead routing tool and developed an internal lead routing script optimizing lead distribution based on sales channel, in-office status, seniority, MQL status, partnership referrals, and AE/SDR availability.",
+            "Organized a cross-functional retention council to analyze LTV, onboarding health, conversion rates, NPS, and churn– culminating in a Retention Health Index and dashboard to highlight pricing optimizations and discount eligibility.",
+            "Built and maintained data pipelines in Redshift and Snowflake to support the new banking product, with a primary focus on integrating the product into Salesforce for GTM visibility and operational reporting."
         ]
     },
     "job3": {
@@ -161,8 +162,8 @@ career_dict = {
         "location": "San Francisco, CA",
         "date": "February 2017 – January 2019",
         "descriptions": [
-            "Utilized data mining in Microsoft Access, SQL Server, and Excel/VBA platforms to identify systemic issues in hospital revenue cycles, and ultimately quantify discrepancies between contracted insurance pricing and hospital billing.",
-            "Created and presented quarterly status meetings to hospital finance executives, including revenue forecasts, bulk claim resubmission updates and opportunities to expedite the identification of medical billing issues."
+            "Designed workflows in Microsoft Access, T-SQL, and VBA to detect underpayments and discrepancies between contracted insurance pricing and hospital billing, reducing manual billing review and improving recovery accuracy.",
+            "Created and presented quarterly status meetings to hospital finance executives, including revenue forecasts, bulk claim resubmission updates, and opportunities to expedite the identification of medical billing issues."
         ]
     },
     "job4": {
@@ -171,9 +172,8 @@ career_dict = {
         "location": "Washington, D.C.",
         "date": "May 2016 – February 2017",
         "descriptions": [
-            "Surveyed hospital executives, physicians and patients to determine stakeholder priorities and potential discrepancies.",
-            "Implemented and analyzed 'iRound' —a real-time patient satisfaction software, used to determine areas of improvement.",
-            "Conducted market research of hospital spending relative to local, regional and national competitors, and market demands."
+            "Implemented and analyzed “iRound”—a real-time patient satisfaction software used to collect patient satisfaction.",
+            "Conducted market research of hospital spending relative to local, regional, and national competitors."
         ]
     },
     "job5": {
@@ -184,7 +184,6 @@ career_dict = {
         "descriptions": [
             "Analyzed and researched hospital performance data via SQL to determine a risk index for joint surgeries.",
             "Strategized solutions and options in hospital-insurer issues & crisis situations with a team of five members.",
-            "Worked with clients to forecast and determine current and expected revenues generated by insurance companies."
         ]
     }
 }
@@ -200,7 +199,7 @@ for job in career_dict.values():
 
 ##################  PROJECTS & ACCOMPLISHMENTS  ################## 
 st.divider()
-st.markdown(create_section_heading("Projects"), unsafe_allow_html=True)
+st.markdown(create_section_heading("Other Projects"), unsafe_allow_html=True)
 for project in projects:
     st.write(project)
 
