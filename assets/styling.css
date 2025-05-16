@@ -64,3 +64,63 @@ hr {
 
 footer {visibility: hidden;}
 header {visibility: hidden;}
+
+.streamlit-expanderHeader {
+    background-color: #2a2a3a !important;
+    border-radius: 20px !important;
+    border-left: 40px solid #ffcc00 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    color: #ffcc00 !important;
+    font-weight: bold !important;
+    font-size: 1.35rem !important;
+    padding: 1rem !important;
+}
+
+.streamlit-expanderContent {
+    background-color: #2a2a3a !important;
+    border-radius: 0 0 20px 20px !important;
+    border-left: 40px solid #ffcc00 !important;
+    padding: 1.5rem !important;
+    color: #e0e0e0 !important;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.4) !important;
+}
+
+.streamlit-expander .streamlit-expanderContent {
+    background-color: #2a2a3a !important;
+}
+
+/* Ensure the content div inside expander also has solid background */
+.streamlit-expander .element-container {
+    background-color: #2a2a3a !important;
+}
+
+/* Target all divs inside expander content */
+.streamlit-expander .streamlit-expanderContent div {
+    background-color: #2a2a3a !important;
+}
+
+/* Target markdown content specifically */
+.streamlit-expander .markdown-text-container {
+    background-color: #2a2a3a !important;
+}
+
+/* Target HTML content rendered through markdown */
+.streamlit-expander .markdown-text-container p,
+.streamlit-expander .markdown-text-container div {
+    background-color: #2a2a3a !important;
+}
+
+/* Ensure stMarkdown elements have the correct background */
+.streamlit-expander stMarkdown {
+    background-color: #2a2a3a !important;
+}
+
+/* Add !important to all backgrounds */
+.streamlit-expander * {
+    background-color: #2a2a3a !important;
+}
+
+.streamlit-expanderHeader svg {
+    fill: #ffcc00 !important;
+}
+

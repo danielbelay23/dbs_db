@@ -2,12 +2,11 @@ streamlit==1.44.0
 plotly==5.18.0
 pandas==2.2.1
 Pillow>=10.2.0
-langchain==0.1.12
-llama-index==0.9.48
-openai==1.5.0
-typing-extensions==4.13.0
-pydantic==1.10.21
-streamlit-chat==0.1.1
+# langchain==0.1.12
+# llama-index==0.9.48
+# openai==1.5.0
+# typing-extensions==4.13.0
+# pydantic==1.10.21
 streamlit-aggrid==0.3.4
 streamlit-timeline==0.0.2
 google-api-core==2.24.0
@@ -25,14 +24,13 @@ google-cloud-spanner==3.47.0
 google-crc32c==1.6.0
 google-resumable-media==2.7.2
 googleapis-common-protos==1.66.0
-markdown-it-py==3.0.0
 beautifulsoup4==4.12.3
 cachetools==5.5.1
 numpy==1.26.4
 gitpython==3.1.44
 jsonschema==4.23.0
 jsonschema-specifications==2024.10.1
-pytest==8.3.1
+# pytest==8.3.1
 python-dateutil==2.9.0
 toml==0.10.2
 tornado==6.4.2
@@ -42,3 +40,13 @@ pandas-gbq>=0.19.2
 setuptools==78.1.0
 colorlog==6.7.0
 kaggle==1.7.4.5
+##for letterboxd portion
+feedparser==6.0.11 
+sgmllib3k==1.0.0
+requests==2.31.0
+
+# flow-component documentation: https://stflow.streamlit.app/
+# streamlit-flow-component==1.6.1
+# streamlit-flow-elements==0.1.1
+# streamlit-flow-state==0.1.1
+# streamlit-flow-layouts==0.1.1

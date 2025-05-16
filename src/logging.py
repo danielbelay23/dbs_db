@@ -1,11 +1,9 @@
-
 import logging
 import logging.handlers
 from typing import Union
 import os
 import sys
 from config import LOG_LEVEL, MS_NAME
-from colorlog import get_logger
 
 # basicConfig = logging.basicConfig
 # DEBUG = logging.DEBUG

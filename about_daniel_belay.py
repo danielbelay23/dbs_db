@@ -1,10 +1,11 @@
 import os 
 import streamlit as st
 import re
-from src import asset_dir 
+from src import asset_dir
 from PIL import Image
+from src.st_server_utils import create_navigation
 
-from src.text_utils import process_skills, create_job_card, job_card_style, create_section_heading, section_heading_style, create_info_card
+from src.text_utils import process_skills, create_job_card, job_card_style, create_section_heading, section_heading_style, add_footer
 #from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader, LLMPredictor, ServiceContext
 #import openai
 #from langchain.chat_models import ChatOpenAI
@@ -34,7 +35,6 @@ profile_info = {
     "LOCATED": "Austin, TX",
     "FROM": "Las Vegas, NV", 
     "EDUCATION": "B.S. Economics, Vanderbilt University",
-    "FOOTER": "© 2025 Daniel Belay. All rights reserved." ,
     "GITHUB": "github.com/danielbelay23",
 }
 projects = [
@@ -45,7 +45,13 @@ projects = [
     "🏆 Built an anomaly detection system that links Stripe collections and asset sales to accounting charges, reversals, credits, and debits",
 ]
 
-st.set_page_config(page_title=profile_info["PAGE_TITLE"], page_icon=profile_info["PAGE_ICON"], layout="wide")
+st.set_page_config(
+    page_title=profile_info["PAGE_TITLE"], 
+    page_icon=profile_info["PAGE_ICON"], 
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+create_navigation()
 ################### STYLING AND PROFILE PICTURE ##################
 
 with open(css_file) as f:
@@ -203,4 +209,4 @@ st.markdown(create_section_heading("Other Projects"), unsafe_allow_html=True)
 for project in projects:
     st.write(project)
 
-st.write(profile_info["FOOTER"])
+add_footer()

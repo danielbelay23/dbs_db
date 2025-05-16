@@ -1,9 +1,10 @@
+import streamlit as st
 from .logging import logger
 from urllib.parse import unquote
 from streamlit.web.server.websocket_headers import (
     get_script_run_ctx,
 )
-import streamlit as st
+from config import NAV_STRUCTURE
 
 def get_headers():
     headers = st.context.headers
@@ -29,3 +30,12 @@ def get_loggedin_username_and_email():
         user_email = ""
         user_groups = ""
     return user_name, user_email, user_groups
+
+def create_navigation():
+    """Create a simple navigation sidebar with about page link at the top and projects in an expander"""
+    st.sidebar.page_link("about_daniel_belay.py", label="about daniel belay")
+    with st.sidebar.expander("One-off Projects", expanded=False):
+        for section_name, section_config in NAV_STRUCTURE.items():
+            for page in section_config["pages"]:
+                st.page_link(page["path"], label=page["title"])
+
