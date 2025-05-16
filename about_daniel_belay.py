@@ -25,7 +25,7 @@ interests = [
     "Interested in MLOps and LLMs, but definitely not an expert", 
 ]
 profile_info = {
-    "PAGE_TITLE": "Daniel Belay | Digital Resume",
+    "PAGE_TITLE": "danielbelay | horsin' around, fwm",
     "PAGE_ICON": ":wave:",
     "NAME": "Daniel Belay",
     "ROLE": "Senior Staff Data Analyst", 
