@@ -89,33 +89,27 @@ header {visibility: hidden;}
     background-color: #2a2a3a !important;
 }
 
-/* Ensure the content div inside expander also has solid background */
 .streamlit-expander .element-container {
     background-color: #2a2a3a !important;
 }
 
-/* Target all divs inside expander content */
 .streamlit-expander .streamlit-expanderContent div {
     background-color: #2a2a3a !important;
 }
 
-/* Target markdown content specifically */
 .streamlit-expander .markdown-text-container {
     background-color: #2a2a3a !important;
 }
 
-/* Target HTML content rendered through markdown */
 .streamlit-expander .markdown-text-container p,
 .streamlit-expander .markdown-text-container div {
     background-color: #2a2a3a !important;
 }
 
-/* Ensure stMarkdown elements have the correct background */
 .streamlit-expander stMarkdown {
     background-color: #2a2a3a !important;
 }
 
-/* Add !important to all backgrounds */
 .streamlit-expander * {
     background-color: #2a2a3a !important;
 }
@@ -124,3 +118,20 @@ header {visibility: hidden;}
     fill: #ffcc00 !important;
 }
 
+/* SIDEBAR SETTINGS */
+[data-testid="stSidebar"] {
+    background: linear-gradient(to bottom, #000000 0%, #1a1a2e 50%, #3C3B54 100%);
+}
+
+[data-testid="stSidebar"] * {
+    color: #ffcc00 !important;
+}
+
+[data-testid="stSidebar"] a {
+    color: #ffcc00 !important;
+}
+
+[data-testid="stSidebar"] a:hover {
+    color: #ffdd44 !important;
+    background-color: rgba(255, 204, 0, 0.1) !important;
+}

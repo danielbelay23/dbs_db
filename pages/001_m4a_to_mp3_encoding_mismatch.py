@@ -12,7 +12,6 @@ st.set_page_config(
 )
 create_navigation()
 css_file = os.path.join("assets", "styling.css")
-# flow_diagram_file = os.path.join("assets", "m4a", "Mini-map_diagram.py")
 
 # if os.path.exists(flow_diagram_file):
 #     with open(flow_diagram_file, "r") as f:
@@ -86,25 +85,38 @@ st.divider()
 project_details_content = {
     "Project Goal": "find, document and resolve mismatches between codec and container",
     "Steps": "(1) recursively search for corrupted M4A files in Music directory (2) list all files with mismatches in a txt file for QA (3) update container value to match codec.",
-    "Solution": "(1) and (2) use shell script + FFprobe to search and document (3) use FFmpeg to convert the container to match codec format."
+    "Solution": "For steps (1) and (2) use shell script + FFprobe to search and document. For step (3) use FFmpeg to convert the container to match codec format."
 }
 
 create_info_card("Project Details", project_details_content)
+if os.path.exists(css_file):
+    with open(css_file) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+with st.expander(label="Usage Instructions", expanded=False):
+    st.markdown(
+        """ 
+        <style>
+        .usage-instructions code, .usage-instructions pre {
+            background-color: #2a2a3a !important;
+        }
+        </style>
 
-with st.expander("Usage Instructions", expanded=False):
-    st.markdown("""
+        <div class="usage-instructions">
+
+
         **Requirements**
         - Install ffmpeg & ffprobe via Homebrew:
         ```bash
         brew install ffmpeg
         ```
+
         **Steps**
         1. **Unzip** the downloaded `M4A Fix Toolkit` zip.
         2. **Open Terminal** and navigate:
         ```bash
         cd /path/to/unzipped/folder
         ```
-        3. **Make scripts executable**:
+        3. **Make scripts executable**: 
         ```bash
         chmod +x check_audio_files.sh rename_m4a_to_mp3.sh fix_mismatched_files.sh
         ```
@@ -120,9 +132,9 @@ with st.expander("Usage Instructions", expanded=False):
         ```bash
         ./fix_mismatched_files.sh "$HOME/Desktop/mismatches.txt"
         ```
-    """, unsafe_allow_html=False)
+        </div>
+    """, unsafe_allow_html=True)
 
 st.divider()
 
 add_footer()
-

@@ -25,7 +25,7 @@ interests = [
     "Interested in MLOps and LLMs, but definitely not an expert", 
 ]
 profile_info = {
-    "PAGE_TITLE": "danielbelay | horsin' around, fwm",
+    "PAGE_TITLE": "danielbelay | my horsin' around work",
     "PAGE_ICON": ":wave:",
     "NAME": "Daniel Belay",
     "ROLE": "Senior Staff Data Analyst", 
@@ -38,11 +38,8 @@ profile_info = {
     "GITHUB": "github.com/danielbelay23",
 }
 projects = [
-    "🏆 Brought Stripe transactions, charges, disputes and refunds tables into BigQuery",
-    "🏆 Created a revenue specific data pipeline and dashboard",
-    "🏆 Built an accounting and finance portal, using Streamlit",
+    "🏆 Built an anomaly detection system that links denied Stripe collections to asset sales, allowing the FinOps team to repurchase assets and wait until collections are enabled",
     "🏆 Created a Sales compensation workflow that records monthly commissions and has the flexibility to include spiffs",
-    "🏆 Built an anomaly detection system that links Stripe collections and asset sales to accounting charges, reversals, credits, and debits",
 ]
 
 st.set_page_config(
