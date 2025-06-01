@@ -13,7 +13,7 @@ run_app:
 	@streamlit run about_daniel_belay.py
 
 docker_build:  ## build docker image for app
-	@docker build -f dockerfile.prod . -t about_daniel_belay
+	@docker build -f Dockerfile . -t about_daniel_belay
 
 docker_run:  ## run dashboard locally with docker (prereq: `make docker_build`)
 	@docker run -p 8501:8501 \
