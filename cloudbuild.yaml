@@ -1,19 +1,19 @@
 steps:
-  # Build the container image using dockerfile.prod
+  #1. build the container image using Dockerfile
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build',
       '--no-cache',
       '-t', '${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPOSITORY}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}',
       '.',
-      '-f', 'dockerfile.prod'  # Specify your custom dockerfile name here
+      '-f', 'Dockerfile'
     ]
 
-  # Push the container image
+  #2. push the container image
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', '${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPOSITORY}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}']
 
-  # Deploy to Cloud Run
+  #3. deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     args: [
       'run', 'services', 'update', '${_SERVICE_NAME}',
