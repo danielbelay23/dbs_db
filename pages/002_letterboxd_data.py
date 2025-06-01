@@ -158,22 +158,8 @@ create_info_card("About the project", intro_content)
 ################################################### API KEY SETUP #########################################################
 tmdb_api_key = os.getenv("TMDB_API_KEY")
 if not tmdb_api_key:
-    api_key_content = {
-        "Action Required": "TMDb API key not found in environment variables. Please enter your key below.",
-        None: "You can get a free API key from The Movie Database (TMDb) by creating an account at themoviedb.org."
-    }
-    create_info_card("API Key Missing", api_key_content)
-    with st.expander("Debug Information", expanded=False):
-        st.code(f"Current working directory: {os.getcwd()}")
-        st.code(f"Environment variable exists: {'TMDB_API_KEY' in os.environ}")
-        st.code(f".env file exists: {os.path.exists(os.path.join(os.getcwd(), '.env'))}")
-    
-    tmdb_api_key = st.text_input("Enter your TMDb API Key:", type="password")
-    if tmdb_api_key:
-        st.success("API key entered. You can save this in your .env file for future use.")
-    else:
-        st.error("Please enter a valid TMDb API key to continue.")
-        st.stop()
+    st.error("TMDb API key not configured. Daniel needs to check this out")
+    st.stop()
 
 ################################################### RSS FEED SECTION #########################################################
 letterboxd_rss_url = "https://letterboxd.com/dbtwothree/rss/"
