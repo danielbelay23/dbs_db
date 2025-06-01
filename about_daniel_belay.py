@@ -22,7 +22,7 @@ interests = [
     "Working with CASA of Travis County about ~15hr/month", 
     "Used to run marathons and half marathons, now I just talk about having done them", 
     "Sometimes watch reality tv (I'm not proud of this)", 
-    "Interested in MLOps and LLMs, but definitely not an expert", 
+    "Interested in MLOps and LLMs, but definitely not an expert",
 ]
 profile_info = {
     "PAGE_TITLE": "danielbelay | my horsin' around work",
@@ -67,7 +67,7 @@ with right_container:
         f"<h1 style='font-family: Montserrat, sans-serif; letter-spacing: 0.05em; font-size: 3.75rem; margin-bottom: 0.5rem;'>{profile_info['NAME']}</h1>",
         unsafe_allow_html=True
     ) 
-    col2, col3 = st.columns([2, 2])    
+    col2, col3 = st.columns([2, 2])
     with col2:
         st.markdown(
             f"""

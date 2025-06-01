@@ -134,4 +134,25 @@ header {visibility: hidden;}
 [data-testid="stSidebar"] a:hover {
     color: #ffdd44 !important;
     background-color: rgba(255, 204, 0, 0.1) !important;
+} 
+
+/* DOWNLOAD BUTTON SETTINGS */
+[data-testid="stDownloadButton"] button {
+    background-color: #ffcc00 !important;
+    border-color: #ffcc00 !important;
+    color: #000000 !important; /* Black text */
+}
+
+[data-testid="stDownloadButton"] button * {
+    color: #000000 !important;
+}
+
+[data-testid="stDownloadButton"] button:hover {
+    background-color: #ffdd44 !important;
+    border-color: #ffdd44 !important;
+    color: #000000 !important;
+}
+
+[data-testid="stDownloadButton"] button:hover * {
+    color: #000000 !important;
 }
