@@ -5,25 +5,31 @@ steps:
       'build',
       '--no-cache',
       '-t', '${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPOSITORY}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}',
-      '.',
-      '-f', 'Dockerfile'
+      '-t', '${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPOSITORY}/${REPO_NAME}/${_SERVICE_NAME}:latest',
+      '-f', 'Dockerfile',
+      '.'
     ]
 
   #2. push the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', '${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPOSITORY}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}']
+    args: ['push', '--all-tags', '${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPOSITORY}/${REPO_NAME}/${_SERVICE_NAME}']
 
   #3. deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
-    args: [
-      'run', 'services', 'update', '${_SERVICE_NAME}',
-      '--platform=managed',
-      '--image=${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPOSITORY}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}',
-      '--labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=${COMMIT_SHA},gcb-build-id=${BUILD_ID},gcb-trigger-id=${_TRIGGER_ID}',
-      '--region=${_DEPLOY_REGION}',
-      '--quiet'
-    ]
     entrypoint: gcloud
+    args: [
+      'run', 'deploy', '${_SERVICE_NAME}',
+      '--image=${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPOSITORY}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}',
+      '--platform=managed',
+      '--region=${_DEPLOY_REGION}',
+      '--quiet',
+      '--no-allow-unauthenticated'
+    ]
 
+# CRITICAL: This fixes the service account logging error
+options:
+  logging: CLOUD_LOGGING_ONLY
+  
 images:
   - '${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPOSITORY}/${REPO_NAME}/${_SERVICE_NAME}:${COMMIT_SHA}'
+  - '${_AR_HOSTNAME}/${PROJECT_ID}/${_AR_REPOSITORY}/${REPO_NAME}/${_SERVICE_NAME}:latest'
