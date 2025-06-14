@@ -27,10 +27,11 @@ RUN mkdir -p ~/.streamlit
 COPY setup.sh setup.sh
 RUN chmod +x setup.sh && ./setup.sh
 
-EXPOSE 8501
+CMD streamlit run about_daniel_belay.py
+# ENV STREAMLIT_SERVER_PORT=8080
+# ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
+# ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
 
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl --fail http://localhost:8501/_stcore/health
+# EXPOSE 8080
 
-#make run? 
-ENTRYPOINT ["streamlit", "run", "about_daniel_belay.py"]
+# CMD ["streamlit", "run", "about_daniel_belay.py"]
