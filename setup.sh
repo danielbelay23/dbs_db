@@ -1,10 +1,12 @@
+#!/bin/bash
+
 mkdir -p ~/.streamlit/
 
-cat <<EOF > ~/.streamlit/config.toml
+cat > ~/.streamlit/config.toml <<EOF
 [server]
 headless = true
 enableCORS = false
-port = \$PORT
+port = 8080
 address = "0.0.0.0"
 
 [theme]
