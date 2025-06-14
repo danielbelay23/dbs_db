@@ -15,4 +15,4 @@ def load_env_from_file():
                         pass
         return True
     return False
-load_env_from_file() 
+load_env_from_file()
