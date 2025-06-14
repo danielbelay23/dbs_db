@@ -2,8 +2,6 @@ FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV PORT=8501
-ENV STREAMLIT_SERVER_PORT=8501
 ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
 ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
 
@@ -27,11 +25,5 @@ RUN mkdir -p ~/.streamlit
 COPY setup.sh setup.sh
 RUN chmod +x setup.sh && ./setup.sh
 
-CMD streamlit run about_daniel_belay.py
-# ENV STREAMLIT_SERVER_PORT=8080
-# ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
-# ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
-
-# EXPOSE 8080
-
-# CMD ["streamlit", "run", "about_daniel_belay.py"]
+EXPOSE 8080
+ENTRYPOINT ["streamlit", "run", "about_daniel_belay.py", "--server.port=8080", "--server.address=0.0.0.0"]
