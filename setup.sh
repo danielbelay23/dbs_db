@@ -1,12 +1,13 @@
 #!/bin/bash
+set -euo pipefail
 
 mkdir -p ~/.streamlit/
 
-cat > ~/.streamlit/config.toml <<EOF
+cat > ~/.streamlit/config.toml << EOF
 [server]
 headless = true
-enableCORS = false
-port = ${PORT:-8080}
+enableCORS = true
+port = 8080
 address = "0.0.0.0"
 
 [theme]
