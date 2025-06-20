@@ -10,6 +10,9 @@ enableCORS = true
 port = 8080
 address = "0.0.0.0"
 
+[client]
+showSidebarNavigation = false
+
 [theme]
 primaryColor = "#ffcc00"
 backgroundColor = "#1a1a2e"

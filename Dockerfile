@@ -29,4 +29,4 @@ RUN chmod +x setup.sh && ./setup.sh
 EXPOSE 8080
 
 # Use CMD instead of ENTRYPOINT for more flexibility
-CMD ["streamlit", "run", "about_daniel_belay.py", "--server.port=8080", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "about_daniel_belay.py", "--server.port=8080", "--server.address=0.0.0.0", "--client.showSidebarNavigation=False"]
