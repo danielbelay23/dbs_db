@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
+COPY assets/ ./assets/
 COPY . .
 RUN mkdir -p ~/.streamlit
 

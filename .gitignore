@@ -1,6 +1,5 @@
 *.pkl
 *.bak
-*.png
 _local*
 tmp.*
 *.ipynb
@@ -14,3 +13,6 @@ __pycache__/
 .pytest_cache/
 .env.local
 .env
+.DS_Store
+*.envrc
+**/.DS_Store.envrc
